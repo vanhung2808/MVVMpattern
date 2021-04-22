@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="162dp">
+
+        <Button
+            android:id="@+id/buttonframelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/customer_button"
+            android:text="Frame" />
+
+        <Button
+            android:id="@+id/buttonlinearlayouthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="31dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/buttonframelayout"
+            android:backgroundTint="#F44336"
+            android:text="Linear hor" />
+
+        <Button
+            android:id="@+id/buttonlinearlayoutver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonframelayout"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#E91E63"
+            android:text="Linear ver" />
+
+        <Button
+            android:id="@+id/buttonRelativelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonlinearlayouthor"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/buttonlinearlayoutver"
+            android:backgroundTint="#FF9800"
+            android:text="Relative" />
+
+        <Button
+            android:id="@+id/buttonTablelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonlinearlayouthor"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="31dp"
+            android:layout_toRightOf="@+id/buttonRelativelayout"
+            android:text="Table" />
+
+        <Button
+            android:id="@+id/buttonGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonlinearlayoutver"
+            android:layout_marginTop="5dp"
+            android:text="Grid" />
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal_200">
+
+
+
+    </FrameLayout>
+
+</LinearLayout>

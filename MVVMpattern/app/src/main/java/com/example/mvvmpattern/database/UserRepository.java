@@ -19,15 +19,15 @@ public class UserRepository {
         userDatabase.userDao().insertUser(user);
     }
 
-    public boolean findByName(String email, String password) {
-        if(iUserDao.findByName(email,password) == null) {
+    public boolean findUser(String email, String password) {
+        if(iUserDao.findUser(email,password) == null) {
             return false;
         }
         return true;
     }
 
-    public boolean findByUserName(String email) {
-        if(iUserDao.findByUserName(email) == null) {
+    public boolean findExitsEmail(String email) {
+        if(iUserDao.findExistsEmail(email) == null) {
             return false;
         }
         return true;

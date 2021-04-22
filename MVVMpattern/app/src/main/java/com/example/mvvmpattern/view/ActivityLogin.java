@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.example.mvvmpattern.R;
 
 public class ActivityLogin extends AppCompatActivity {
-    private Intent intent;
     private TextView tvWelcome;
 
     @Override

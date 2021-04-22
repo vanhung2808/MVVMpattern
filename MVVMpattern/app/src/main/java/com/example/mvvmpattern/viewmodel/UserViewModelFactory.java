@@ -1,13 +1,11 @@
 package com.example.mvvmpattern.viewmodel;
 
 import android.app.Application;
-import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.mvvmpattern.model.User;
 
 import java.lang.reflect.InvocationTargetException;
 

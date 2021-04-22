@@ -16,10 +16,10 @@ public interface IUserDao {
     void insertUser(User user);
 
     @Query("select * from User where email = :email and password = :password")
-    public User findByName(String email, String password);
+    public User findUser(String email, String password);
 
     @Query("select * from User where email = :username")
-    public User findByUserName(String username);
+    public User findExistsEmail(String username);
 
 
 }

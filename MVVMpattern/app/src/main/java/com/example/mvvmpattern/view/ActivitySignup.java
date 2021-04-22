@@ -13,22 +13,22 @@ import com.example.mvvmpattern.R;
 import com.example.mvvmpattern.viewmodel.UserViewModel;
 import com.example.mvvmpattern.viewmodel.UserViewModelFactory;
 
-public class ActivitySignin extends AppCompatActivity {
+public class ActivitySignup extends AppCompatActivity {
     private EditText etEmail, etPassword, etConfigPassword;
-    private Button btSignin;
+    private Button btSignup;
     private UserViewModel userViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin);
+        setContentView(R.layout.activity_signup);
         userViewModel = new ViewModelProvider(this, new UserViewModelFactory(getApplication())).get(UserViewModel.class);
 
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         etConfigPassword = findViewById(R.id.et_config_password);
-        btSignin = findViewById(R.id.bt_signin2);
+        btSignup = findViewById(R.id.bt_signup2);
 
-        btSignin.setOnClickListener(new View.OnClickListener() {
+        btSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) throws NumberFormatException {
                 String email = etEmail.getText().toString();

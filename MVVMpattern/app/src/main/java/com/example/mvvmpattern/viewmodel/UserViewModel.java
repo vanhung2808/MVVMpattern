@@ -26,15 +26,15 @@ public class UserViewModel extends AndroidViewModel {
         userRepository.insertUser(user);
     }
 
-    public boolean findByName(String email, String password) {
-        if (!userRepository.findByName(email, password)) {
+    public boolean findUser(String email, String password) {
+        if (!userRepository.findUser(email, password)) {
             return false;
         }
         return true;
     }
 
-    public boolean findByUserName (String email) {
-        if (!userRepository.findByUserName(email) ) {
+    public boolean findExistsEmail (String email) {
+        if (!userRepository.findExitsEmail(email) ) {
             return false;
         }
         return true;

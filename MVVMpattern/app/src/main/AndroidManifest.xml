@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MVVMPattern">
-        <activity android:name=".view.ActivitySignin"></activity>
+        <activity android:name=".view.ActivitySignup"></activity>
         <activity android:name=".view.ActivityLogin" />
         <activity
             android:name=".view.LoginActivity"
