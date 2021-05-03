@@ -44,16 +44,13 @@ public class SellerAdapter extends RecyclerView.Adapter<SellerAdapter.SellerView
     @NonNull
     @Override
     public SellerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Inflate view from row_item_song.xml
         View itemView = layoutInflater.inflate(R.layout.seller_item, parent, false);
         return new SellerViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(SellerViewHolder holder, int position) {
-        // Get song in mSong via position
         Seller seller = sellerList.get(position);
-        //bind data to viewholder
         holder.ivRank.setImageResource(seller.getRank());
         holder.tvNumber.setText(seller.getNumber());
         holder.tvName.setText(seller.getName());

@@ -54,4 +54,5 @@ public class Seller {
     public void setImage(int image) {
         Image = image;
     }
+
 }

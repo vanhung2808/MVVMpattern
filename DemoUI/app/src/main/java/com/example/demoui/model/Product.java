@@ -1,6 +1,7 @@
 package com.example.demoui.model;
 
 public class Product {
+    private int Id;
     private int Image;
     private String ProductInfo;
     private String Price;
@@ -8,8 +9,10 @@ public class Product {
     private String NewProduct;
     private String Percent;
     private boolean Favorite;
+    private String Category;
 
-    public Product(int image, String productInfo, String price,String oldPrice, String newproduct,String percent, boolean favorite) {
+    public Product(int id, int image, String productInfo, String price,String oldPrice, String newproduct,String percent, boolean favorite, String category) {
+        Id = id;
         Image = image;
         ProductInfo = productInfo;
         Price = price;
@@ -17,6 +20,15 @@ public class Product {
         NewProduct = newproduct;
         Percent = percent;
         Favorite = favorite;
+        Category = category;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public int getImage() {
@@ -73,5 +85,13 @@ public class Product {
 
     public void setOldPrice(String oldPrice) {
         OldPrice = oldPrice;
+    }
+
+    public String getCategory() {
+        return Category;
+    }
+
+    public void setCategory(String category) {
+        Category = category;
     }
 }
