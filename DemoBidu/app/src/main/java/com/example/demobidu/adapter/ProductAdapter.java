@@ -21,11 +21,11 @@ import java.util.List;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
     private final List<Product> productList;
     private final LayoutInflater layoutInflater;
-    private final IItemClickListener itemClickListener;
-    public ProductAdapter(Context context, List<Product> datas, IItemClickListener itemClickListener) {
+    private ItemClickListener itemClickListener;
+    public ProductAdapter(Context context, List<Product> datas, ItemClickListener itemClickListener1) {
         productList = datas;
         layoutInflater = LayoutInflater.from(context);
-        this.itemClickListener = itemClickListener;
+        itemClickListener = itemClickListener1;
     }
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
@@ -52,14 +52,16 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Inflate view from row_item_song.xml
         View itemView = layoutInflater.inflate(R.layout.product_item, parent, false);
         return new ProductViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(ProductViewHolder holder, int position) {
+        // Get song in mSong via position
         Product product = productList.get(position);
-
+        //bind data to viewholder
         holder.ivProduct.setImageResource(product.getImage());
         holder.tvInfo.setText(product.getProductInfo());
         holder.tvPrice.setText(product.getPrice());
@@ -75,7 +77,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             holder.tvPercent.setText(product.getPercent());
         }
         holder.cbFavorite.setChecked(product.isFavorite());
-        holder.cbFavorite.setOnClickListener(v -> itemClickListener.onClick(product));
         holder.tvOldPrice.setText(product.getOldPrice());
         holder.tvOldPrice.setPaintFlags(holder.tvOldPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
     }
@@ -85,13 +86,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return productList.size();
     }
 
-    public interface IItemClickListener {
-        void onClick(Product product);
-    }
-
-    public void updateUIposition(Product product) {
-        int position = productList.indexOf(product);
-        notifyItemChanged(position);
+    public interface ItemClickListener {
+        void onClick(int position);
     }
 
 
